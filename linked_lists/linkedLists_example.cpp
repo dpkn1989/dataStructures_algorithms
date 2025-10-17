@@ -14,6 +14,10 @@ MyLinkedList::~MyLinkedList() {
 
 void MyLinkedList::insertAtBeginning(int value) {
     std::cout << "Inserting " << value << " at the beginning of the linked list." << std::endl;
+    Node *newNode = new Node();
+    newNode->data = value;
+    newNode->next = head->next;
+    head->next = newNode;
 }
 
 void MyLinkedList::insertAtEnd(int value) {
@@ -52,12 +56,16 @@ void MyLinkedList::find(int value) {
 void MyLinkedList::display() const {
     std::cout << "Displaying linked list contents." << std::endl;
 
-    Node *current = head->next; // Start from the first node
-    while (current != nullptr) {
-        std::cout << current->data << " ";
-        current = current->next;
-    }
-    if (current == nullptr) {
+    if (head->next == nullptr) {
         std::cout << "Linked list is empty." << std::endl;
+    }
+    else{
+        Node *current = head->next; // Start from the first node
+        
+        while (current != nullptr) {
+           std::cout << current->data << " ";
+           current = current->next;
+        }
+        std::cout << std::endl;
     }
 }

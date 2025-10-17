@@ -6,11 +6,12 @@ int main() {
     std::cout << "Hello, World!" << std::endl;
     MyLinkedList list;
     list.display();
-    list.insertAtEnd(3);
     list.insertAtEnd(5);
     list.insertAtEnd(9);
+    list.insertAtEnd(12);
     list.find(5);
     list.find(6);
+    list.insertAtBeginning(3);
     list.display();
     return 0;
 }
