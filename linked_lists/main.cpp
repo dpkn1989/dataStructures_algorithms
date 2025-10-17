@@ -4,6 +4,13 @@
 
 int main() {
     std::cout << "Hello, World!" << std::endl;
-    linkedLists_example();
+    MyLinkedList list;
+    list.display();
+    list.insertAtEnd(3);
+    list.insertAtEnd(5);
+    list.insertAtEnd(9);
+    list.find(5);
+    list.find(6);
+    list.display();
     return 0;
 }

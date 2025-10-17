@@ -1,45 +1,63 @@
 #include <iostream>
 #include "include/linkedLists_example.h"
 
-void linkedLists_example(void) {
-    std::cout << "This is linkedLists_example function." << std::endl;
+MyLinkedList::MyLinkedList() {
+    std::cout << "MyLinkedList with dummy head created." << std::endl;
+    head = new Node();
+    head->data = 0; // Dummy head node
+    head->next = nullptr;
+}
 
-    Node *head = new Node();
-    
-    Node *first = new Node();
-    first->data = 1;
-    head->next = first;
+MyLinkedList::~MyLinkedList() {
+    std::cout << "MyLinkedList desstructor called." << std::endl;
+}
 
-    Node *second = new Node();
-    second->data = 2;
-    first->next = second;
+void MyLinkedList::insertAtBeginning(int value) {
+    std::cout << "Inserting " << value << " at the beginning of the linked list." << std::endl;
+}
 
-    Node *third = new Node();
-    third->data = 3;
-    second->next = third;
-    third->next = nullptr;
+void MyLinkedList::insertAtEnd(int value) {
+    std::cout << "Inserting " << value << " at the end of the linked list." << std::endl;
+    Node *newNode = new Node();
+    newNode->data = value;
+    newNode->next = nullptr;
+    if (head->next == nullptr) {
+        head->next = newNode;
+    }
+    else {
+        Node *current = head->next;
+        while (current->next != nullptr) {
+            current = current->next;
+        }
+        current->next = newNode;
+   }
+}
 
-    // Finding a node with value 2
+void MyLinkedList::find(int value) {
+    std::cout << "Finding " << value << " in the linked list." << std::endl;
+
     Node *current = head->next; // Start from the first node
     while (current != nullptr) {
-        if (current->data == 2) {
-            std::cout << "Node with value 2 found." << std::endl;
+        if (current->data == value) {
+            std::cout << "Node with value " << value << " found." << std::endl;
             break;  
         }
         current = current->next;
     }
     if (current == nullptr) {
-        std::cout << "Node with value 2 not found." << std::endl;
+        std::cout << "Node with value " << value << " not found." << std::endl;
     }
+}
 
-    // Inserting a new node with value 4 at the end of the list
-    Node *fourth = new Node();
-    fourth->data = 4;
-    fourth->next = nullptr;
-    current = head;
-    while (current->next != nullptr) {
-        current = current->next;    
+void MyLinkedList::display() const {
+    std::cout << "Displaying linked list contents." << std::endl;
+
+    Node *current = head->next; // Start from the first node
+    while (current != nullptr) {
+        std::cout << current->data << " ";
+        current = current->next;
     }
-    current->next = fourth;
-    std::cout << "Inserted node with value 4 at the end of the list." << std::endl;
+    if (current == nullptr) {
+        std::cout << "Linked list is empty." << std::endl;
+    }
 }
