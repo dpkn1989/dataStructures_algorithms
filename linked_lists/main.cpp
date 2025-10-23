@@ -13,5 +13,12 @@ int main() {
     list.find(6);
     list.insertAtBeginning(3);
     list.display();
+    list.insertAtPosition(14, 2);
+    list.display();
+    list.deĺeteAtbeginning();
+    list.display();
+    //list.reverseList();
+    list.reverseListrecursive();
+    list.display();
     return 0;
 }

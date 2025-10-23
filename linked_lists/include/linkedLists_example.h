@@ -4,6 +4,7 @@
 struct Node {
     int data;
     Node* next;
+    Node(int val) : data(val), next(nullptr) {}
 };
 
 class MyLinkedList {
@@ -13,10 +14,19 @@ public:
 
     void insertAtBeginning(int value);
     void insertAtEnd(int value);
-    void find(int value);
+    void insertAtPosition(int value, int position);
+    void deĺeteAtbeginning();
+    void deleteAtEnd();
+    void deleteAtPosition(int position);
+    Node* find(int value);
     void display() const;
+    void reverseList();
+    void reverseListrecursive();
+    Node* reverseListrecursiveHelper(Node* current, Node* previous);
 private:
     Node* head;
+    Node* tail;
 };
+
 
 #endif // LINKEDLISTS_EXAMPLE_H
