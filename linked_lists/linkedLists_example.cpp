@@ -224,3 +224,11 @@ Node* MyLinkedList::reverseListrecursiveHelper(Node* current, Node* previous) {
     return reverseListrecursiveHelper(next, current);
 }
 
+Node* MyLinkedList::getHead() const {
+    return head;
+}
+
+Node* MyLinkedList::getTail() const {
+    return tail;
+}
+

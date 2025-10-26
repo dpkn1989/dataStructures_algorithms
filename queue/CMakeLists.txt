@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.0)
-project(linked_lists LANGUAGES CXX)
+project(queue LANGUAGES CXX)
 
 # Prefer a Debug build when not specified
 if(NOT CMAKE_BUILD_TYPE AND NOT CMAKE_CONFIGURATION_TYPES)
@@ -10,8 +10,7 @@ endif()
 # Source files
 set(SOURCES
     main.cpp
-    linkedLists_example.cpp
-    stack_example.cpp
+    queue_example.cpp
 )
 
 # Header/include directories (adjust path if your headers are elsewhere)

@@ -23,6 +23,8 @@ public:
     void reverseList();
     void reverseListrecursive();
     Node* reverseListrecursiveHelper(Node* current, Node* previous);
+    Node* getHead() const;
+    Node* getTail() const;
 private:
     Node* head;
     Node* tail;
