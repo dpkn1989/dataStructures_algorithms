@@ -4,7 +4,7 @@
 MyQueue::MyQueue()
 {
     std::cout << "MyQueue constructor called." << std::endl;
-    frontIndex = 0;
+    frontIndex = -1;
     rearIndex = -1;
     currentSize = 0;
     for(int i = 0; i < MAX_SIZE; ++i) {
@@ -19,6 +19,9 @@ MyQueue::~MyQueue()
 
 void MyQueue::enqueue(int value)
 {
+    if(isEmpty()) {
+        frontIndex = 0;
+    }
     if (isFull()) {
         std::cout << "Queue is full. Cannot enqueue " << value << "." << std::endl;
         return;
@@ -33,6 +36,14 @@ void MyQueue::dequeue()
 {
     if (isEmpty()) {
         std::cout << "Queue is empty. Cannot dequeue." << std::endl;
+        return;
+    }
+    if(frontIndex == rearIndex) {
+        // Queue will be empty after this dequeue
+        frontIndex = -1;
+        rearIndex = -1;
+        currentSize = 0;
+        std::cout << "Dequeued last element. Queue is now empty." << std::endl;
         return;
     }
 
