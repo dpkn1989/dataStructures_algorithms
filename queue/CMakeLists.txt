@@ -11,6 +11,7 @@ endif()
 set(SOURCES
     main.cpp
     queue_example.cpp
+    circularQueue_example.cpp
 )
 
 # Header/include directories (adjust path if your headers are elsewhere)

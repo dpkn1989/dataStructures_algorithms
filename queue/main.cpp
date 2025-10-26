@@ -1,16 +1,20 @@
 // /home/sitaram/dataStructures_algorithms/linked_lists/main.cpp
 #include <iostream>
-#include "queue_example.h"
+#include "circularQueue_example.h"
 
 int main() {
     std::cout << "Hello, World!" << std::endl;
 
-    MyQueue queue;
+    MyCircularQueue queue;
     queue.enqueue(3);
     queue.enqueue(5);
     queue.enqueue(6);
     queue.display();
+    queue.enqueue(9); // Attempt to enqueue to full queue
+    queue.display();
     queue.dequeue();
+    queue.enqueue(9);
+    queue.display();
     std::cout << "Is the Queue full? " << (queue.isFull() ? " : Yes" : " : No") << std::endl;
     std::cout << "Is the Queue empty? " << (queue.isEmpty() ? " : Yes" : " : No") << std::endl;
     std::cout << "The front of the queue is: " << queue.front() << std::endl;
