@@ -11,6 +11,7 @@ endif()
 set(SOURCES
     main.cpp
     linearSearch_example.cpp
+    binarySearch_example.cpp
 )
 
 # Header/include directories (adjust path if your headers are elsewhere)

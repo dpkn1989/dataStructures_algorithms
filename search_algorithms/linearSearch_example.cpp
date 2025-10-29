@@ -3,9 +3,10 @@
 
 MyLinearSearch::MyLinearSearch(size_t size) 
 {
-    std::cout << "MyLinearSearch constructor called." << std::endl;
+    std::cout << "MyLinearSearch constructor called and the Vector size is "<< myVector.size() << std::endl;
+    myVector.resize(size);
     for(int i = 0; i < size; ++i) {
-        myVector.push_back(i * 10); // Initialize with some values
+        myVector[i] = static_cast<int>(i * 10);// Initialize with some values
     }
 }
 
