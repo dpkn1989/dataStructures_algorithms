@@ -1,4 +1,4 @@
-// /home/sitaram/dataStructures_algorithms/linked_lists/main.cpp
+// /home/sitaram/dataStructures_algorithms/queue/main.cpp
 #include <iostream>
 #include "circularQueue_example.h"
 
